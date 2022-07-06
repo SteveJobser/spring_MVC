@@ -6,18 +6,27 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>ASK</title>
 </head>
 <body>
-<form action="/showDetails" method="get">
-    <input type="text" name="employeeName"
-    placeholder="Write your name"/>
+<form:form action="showDetails" modelAttribute="employee">
 
-    <input type="submit"/>
+    Name: <form:input path="name"/>
+    <br><br>
+    Surname: <form:input path="surname"/>
+    <br><br>
+    Salary: <form:input path="salary"/>
+    <br><br>
+    Department <form:select path="department">
+        <form:options items="${employee.departments}"/>
+    </form:select>
+    <br><br>
+    <input type="submit" value="OK">
 
-</form>
+</form:form>
 
 </body>
 </html>
