@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 public class MyController {
 
     @RequestMapping("/askDetails")
-    public String askDetails(Model model)
-    {   model.addAttribute("employee", new Employee());
+    public String askDetails(Model model) {
+        model.addAttribute("employee", new Employee());
         return "ask-emp-details-view";
     }
 
