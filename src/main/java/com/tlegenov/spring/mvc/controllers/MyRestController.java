@@ -15,7 +15,7 @@ public class MyRestController {
         employee.setName("Tim");
         if (employee.getName().contains("Tim")) {
             response.setSuccess(true);
-            response.setReason("GREAT");
+            response.setReason("Person is found");
             return response;
         }
         return employee;
